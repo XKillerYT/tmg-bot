@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
-const prefix = "++"
+const prefix = "+"
 
 
 
@@ -175,7 +175,7 @@ client.on('message', message => {
            console.log(`ON ${client.guilds.size} Servers '     Script By : Diamond Codes ' `);
          console.log(`----------------`);
        console.log(`Logged in as ${client.user.tag}!`);
-     client.user.setGame(`++help`)//حقوق دايموند كودز
+     client.user.setGame(`+help`)//حقوق دايموند كودز
      client.user.setStatus("online")
      
      });
@@ -298,33 +298,23 @@ client.on('message', message => {
         ${m}
         [❖═════ Torento Commands ═══════❖]
         
-        『++clear / لحذف الشات 』
-        『++mc / لقفل الشات  』
-        『++unmc / لفتح الشات 』
-        『++bc / لارسال رسالة لجميع اعضاء السيرفر 』
-        『++kick / لطرد شخص من الدسكورد 』
-        『++ban / لاعطاء شخص باند من الدسكورد 』
-        『++ct / لانشاء روم كتابي 』
-        『++cv / لانشاء روم صوتي 』
-        『++temp on / لتشغيل الرومات المؤقتة 』
-        『++temp off / لاطفاء الرومات المؤقتة 』
-        『++c-channel / لانشاء روم يكون بعدد اعضاء السيرفر 』
+        『+clear / لحذف الشات 』
+        『+mc / لقفل الشات  』
+        『+unmc / لفتح الشات 』
+        『+bc / لارسال رسالة لجميع اعضاء السيرفر 』
+        『+kick / لطرد شخص من الدسكورد 』
+        『+ban / لاعطاء شخص باند من الدسكورد 』
+        『+ct / لانشاء روم كتابي 』
+        『+cv / لانشاء روم صوتي 』
+        『+temp on / لتشغيل الرومات المؤقتة 』
+        『+temp off / لاطفاء الرومات المؤقتة 』
+        『+c-channel / لانشاء روم يكون بعدد اعضاء السيرفر 』
 
         
          **`);
         
             }
         });
-        
-        client.on ("guildMemberAdd", member => {
-  
-          var role = member.guild.roles.find ("name", "{Member}");
-          member.addRole (role);
-         
-       })
        
-       client.on ("guildMemberRemove", member => {
-          
-       })
 
 client.login(process.env.BOT_TOKEN);
