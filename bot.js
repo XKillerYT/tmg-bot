@@ -127,7 +127,7 @@ client.on('message', message => {
     
     client.on('message', message => {
     
-      if(command === prefix + 'mc') {
+        if(message.content.startsWith(prefix + 'mc')) {
                             if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
     
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -138,7 +138,7 @@ client.on('message', message => {
                    message.reply("تم تقفيل الشات ✅ ")
                });
                  }
-                 if(command === prefix + 'unmc') {
+        if(message.content.startsWith(prefix + 'unmc')) {
         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
     
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
