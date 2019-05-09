@@ -175,7 +175,7 @@ client.on('message', message => {
            console.log(`ON ${client.guilds.size} Servers '     Script By : Diamond Codes ' `);
          console.log(`----------------`);
        console.log(`Logged in as ${client.user.tag}!`);
-     client.user.setGame(`+help`)//حقوق دايموند كودز
+     client.user.setGame(`+help | By X_KillerYT`)//حقوق دايموند كودز
      client.user.setStatus("online")
      
      });
@@ -295,8 +295,7 @@ client.on('message', message => {
         
          message.author.sendMessage(`
          **
-        ${m}
-        [❖═════ Torento Commands ═══════❖]
+        [❖═════ TMG Commands ═══════❖]
         
         『+clear / لحذف الشات 』
         『+mc / لقفل الشات  』
