@@ -37,7 +37,7 @@ client.on('message', message => {
       .addField("User:",  `[ + ${user.tag} + ]`)
       .addField("By:", `[  + ${message.author.tag} +  ]`)
       .addField("Reason:", `[ + ${reason} +  ]`)
-      client.channels.get("492583022982463500").send({embed : banembed})
+      client.channels.get("576077381026971658").send({embed : banembed})
     }
     });
     client.on('message' , message => {
