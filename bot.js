@@ -175,7 +175,7 @@ client.on('message', message => {
            console.log(`ON ${client.guilds.size} Servers '     Script By : Diamond Codes ' `);
          console.log(`----------------`);
        console.log(`Logged in as ${client.user.tag}!`);
-     client.user.setGame(`By XKillérYT / Noks | TLR System`)//حقوق دايموند كودز
+     client.user.setGame(`By XKillérYT || нℓ | Noks`)//حقوق دايموند كودز
      client.user.setStatus("online")
      
      });
@@ -369,7 +369,7 @@ client.on("message", message => {
         
          message.author.sendMessage(`
          **
-        [❖═════ TLR Commands ═══════❖]
+        [❖═════ Bot Commands ═══════❖]
         
         『-clear / لحذف الشات 』
         『-mc / لقفل الشات  』
