@@ -175,7 +175,7 @@ client.on('message', message => {
            console.log(`ON ${client.guilds.size} Servers '     Script By : Diamond Codes ' `);
          console.log(`----------------`);
        console.log(`Logged in as ${client.user.tag}!`);
-     client.user.setGame(`-help | RMS System`)//حقوق دايموند كودز
+     client.user.setGame(`By XKillérYT / Noks | TLR System`)//حقوق دايموند كودز
      client.user.setStatus("online")
      
      });
@@ -285,6 +285,80 @@ client.on('message', message => {
         }
         });
       
+     client.on('message', async message => {
+        let muteReason = message.content.split(" ").slice(3).join(" ");
+        let mutePerson = message.mentions.users.first();
+        let messageArray = message.content.split(" ");
+        let muteRole = message.guild.roles.find("name", "Muted");
+        let time = messageArray[2];
+        if(message.content.startsWith(prefix + "mute")) {
+          if(!message.channel.guild) return message.reply("هذا الامر للسيرفرات فقط :no_entry: ");
+            if(!message.member.hasPermission('ADMINISTATOR')) return message.channel.send('**لا تملك برمشن** `ADMINISTATOR`' );
+            if(!mutePerson) return message.channel.send('**Mention Someone**')
+            if(mutePerson === message.author) return message.channel.send('** :no_entry: لا تستطيع اعطاء نفسك ميوت**');
+            if(mutePerson === client.user) return message.channel.send('** :no_entry: لا تستطيع اعطاء البوت ميوت**');
+            if(message.guild.member(mutePerson).roles.has(muteRole.id)) return message.channel.send('**هذا الشخص لديه ميوت من قبل !**');
+            if(!muteRole) return message.guild.createRole({ name: "Muted", permissions: [] });
+            if(!time) return message.channel.send("**اكتب الوقت**");
+            if(!time.match(/[1-60][s,m,h,d,w]/g)) return message.channel.send('**البوت لا يدعم الوقت هذا**');
+            if(!muteReason) return message.channel.send('** اكتب السبب **')
+            message.guild.member(mutePerson).addRole(muteRole);
+            message.channel.send(`**:white_check_mark: ${mutePerson} has been muted ! :zipper_mouth: **`)
+            message.delete()
+            let muteEmbed = new Discord.RichEmbed()
+            .setTitle(`ميوت جديد`)
+            .setThumbnail(message.guild.iconURL)
+            .addField('تم بواسطة :',message.author,true)
+            .addField('تم اعطاء :', `${mutePerson}`)
+            .addField('السبب :',muteReason,true)
+            .addField('الوقت :',`${mmss(mmss(time), {long: true})}`)
+            .setFooter(message.author.username,message.author.avatarURL);
+            let logchannel = message.guild.channels.find(`name`, "log");
+            if(!logchannel) return message.channel.send("** انا لا اجد اللوق **");
+            logchannel.sendEmbed(muteEmbed)
+            mutePerson.send(`**لقد تم اعطاءك ميوت داخل ${message.guild.name} السبب : ${muteReason}**`)
+            .then(() => { setTimeout(() => {
+               message.guild.member(mutePerson).removeRole(muteRole);
+           }, mmss(time));
+        });
+        }
+    });
+
+client.on('message', function(message) {
+    if(message.content.startsWith (prefix  + 'server')) {
+      let embed = new Discord.RichEmbed()
+      .setThumbnail(message.guild.iconURL)
+      .setTitle(`Showing Details Of  **${message.guild.name}*`)
+      .addField('🌐** نوع السيرفر**',`[** __${message.guild.region}__ **]`,true)
+      .addField('🏅** __الرتب__**',`[** __${message.guild.roles.size}__ **]`,true)
+      .addField('🔴**__ عدد الاعضاء__**',`[** __${message.guild.memberCount}__ **]`,true)
+      .addField('🔵**__ عدد الاعضاء الاونلاين__**',`[** __${message.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField('📝**__ الرومات الكتابية__**',`[** __${message.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField('🎤**__ رومات الصوت__**',`[** __${message.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField('👑**__ الأونـر__**',`**${message.guild.owner}**`,true)
+      .addField('🆔**__ ايدي السيرفر__**',`**${message.guild.id}**`,true)
+      .addField('📅**__ تم عمل السيرفر في__**',message.guild.createdAt.toLocaleString())
+      message.channel.send({embed:embed});
+    }
+  });
+
+client.on("message", message => {
+              
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === prefix + "servavatar"){ 
+          const embed = new Discord.RichEmbed()
+  
+      .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setImage(message.guild.iconURL)
+    .setURL(message.guild.iconrURL)
+                    .setTimestamp()
+
+   message.channel.send({embed});
+      }
+  });
+
         client.on('message', message => {
             if (message.author.bot) return;
              if (message.content === prefix + "help") {
@@ -295,7 +369,7 @@ client.on('message', message => {
         
          message.author.sendMessage(`
          **
-        [❖═════ RMS Commands ═══════❖]
+        [❖═════ TLR Commands ═══════❖]
         
         『-clear / لحذف الشات 』
         『-mc / لقفل الشات  』
@@ -307,7 +381,6 @@ client.on('message', message => {
         『-cv / لانشاء روم صوتي 』
         『-temp on / لتشغيل الرومات المؤقتة 』
         『-temp off / لاطفاء الرومات المؤقتة 』
-        『-c-channel / لانشاء روم يكون بعدد اعضاء السيرفر 』
 
         
          **`);
