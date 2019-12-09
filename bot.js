@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
-const prefix = "-"
+const prefix = "#"
 
 
 
@@ -471,16 +471,16 @@ msg.delete();
          **
         [❖═════ Bot Commands ═══════❖]
         
-        『-clear / لحذف الشات 』
-        『-mc / لقفل الشات  』
-        『-unmc / لفتح الشات 』
-        『-bc / لارسال رسالة لجميع اعضاء السيرفر 』
-        『-kick / لطرد شخص من الدسكورد 』
-        『-ban / لاعطاء شخص باند من الدسكورد 』
-        『-ct / لانشاء روم كتابي 』
-        『-cv / لانشاء روم صوتي 』
-        『-temp on / لتشغيل الرومات المؤقتة 』
-        『-temp off / لاطفاء الرومات المؤقتة 』
+        『${prefix}clear / لحذف الشات 』
+        『${prefix}mc / لقفل الشات  』
+        『${prefix}unmc / لفتح الشات 』
+        『${prefix}bc / لارسال رسالة لجميع اعضاء السيرفر 』
+        『${prefix}kick / لطرد شخص من الدسكورد 』
+        『${prefix}ban / لاعطاء شخص باند من الدسكورد 』
+        『${prefix}ct / لانشاء روم كتابي 』
+        『${prefix}cv / لانشاء روم صوتي 』
+        『${prefix}temp on / لتشغيل الرومات المؤقتة 』
+        『${prefix}temp off / لاطفاء الرومات المؤقتة 』
 
         
          **`);
