@@ -359,6 +359,106 @@ client.on("message", message => {
       }
   });
 
+client.on ('message', msg => {
+  if (msg.content ===  'كسمك') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'منيك') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'كسختك') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'كس امك') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'كس اختك') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'شرموط') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'شرموطة') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'قحبة') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'يا ابن القحبة') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
+client.on ('message', msg => {
+  if (msg.content ===  'يا ابن الشرموطة') { 
+    msg.reply('لا تسب').them(sb => {
+sb.delete(1600);
+msg.delete();
+    
+    })
+  }
+});
+
         client.on('message', message => {
             if (message.author.bot) return;
              if (message.content === prefix + "help") {
